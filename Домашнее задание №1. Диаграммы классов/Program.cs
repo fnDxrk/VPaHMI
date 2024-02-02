@@ -14,4 +14,6 @@ SMSLowBalanceNotifyer sms3 = new SMSLowBalanceNotifyer("+73136663242", 1000);
 EMailBalanceChangedNotifyer email1 = new EMailBalanceChangedNotifyer("pochta.noname@gmail.com");
 
 person1.AddNotify(sms1);
+person1.AddNotify(email1);
 person1.ChangeBalance(299);
+person1.ChangeBalance(4000);

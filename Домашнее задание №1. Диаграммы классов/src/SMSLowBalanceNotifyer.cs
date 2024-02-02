@@ -12,10 +12,13 @@ public class SMSLowBalanceNotifyer : INotifyer {
         _lowBalanceValue = lowBalanceValue;
     }
     public void Notify(int balance) {
+        Console.WriteLine($"Number : {_phone}");
         Console.WriteLine("SMSLowBalanceNotifyer");
 
         if (balance < _lowBalanceValue) {
             Console.WriteLine(balance);
         }
+
+        Console.WriteLine("\n");
     }
 }

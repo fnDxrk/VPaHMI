@@ -21,13 +21,13 @@ public class Account {
         Notification();
     }
 
-    public int getBalance {
+    public int Balance {
         get { return _balance;}
     }
 
     private void Notification() {
         foreach(INotifyer n in _notifyers) {
-            n.Notify(getBalance);
+            n.Notify(Balance);
         }
     }
 }
