@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Домашнее задание №1. Диаграммы классов", "Домашнее задание №1. Диаграммы классов", "{0257E88E-D92E-4B3A-9886-C4C4FAD059FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "Домашнее задание №1. Диаграммы классов\ConsoleApp\ConsoleApp.csproj", "{34BA5156-11A6-4043-8C51-B9E23E3EDE6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Домашнее задание №1. Диаграммы классов", "Домашнее задание №1. Диаграммы классов\Домашнее задание №1. Диаграммы классов.csproj", "{0EDB034A-8D79-4644-8A2B-0B7C9F81E987}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +14,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34BA5156-11A6-4043-8C51-B9E23E3EDE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34BA5156-11A6-4043-8C51-B9E23E3EDE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34BA5156-11A6-4043-8C51-B9E23E3EDE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34BA5156-11A6-4043-8C51-B9E23E3EDE6D}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{34BA5156-11A6-4043-8C51-B9E23E3EDE6D} = {0257E88E-D92E-4B3A-9886-C4C4FAD059FD}
+		{A733F055-9FF5-4515-9E47-9D9B36464AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A733F055-9FF5-4515-9E47-9D9B36464AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A733F055-9FF5-4515-9E47-9D9B36464AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A733F055-9FF5-4515-9E47-9D9B36464AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EDB034A-8D79-4644-8A2B-0B7C9F81E987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDB034A-8D79-4644-8A2B-0B7C9F81E987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDB034A-8D79-4644-8A2B-0B7C9F81E987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDB034A-8D79-4644-8A2B-0B7C9F81E987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
