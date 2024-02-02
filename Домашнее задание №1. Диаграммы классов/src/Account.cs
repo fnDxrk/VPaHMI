@@ -25,8 +25,9 @@ public class Account {
         get { return _balance;}
     }
 
-    INotifyer n;
     private void Notification() {
-        // n.Notify(_balance);
+        foreach(INotifyer n in _notifyers) {
+            n.Notify(getBalance);
+        }
     }
 }
