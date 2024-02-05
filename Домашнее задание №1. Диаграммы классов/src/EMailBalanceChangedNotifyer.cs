@@ -8,7 +8,7 @@ public class EMailBalanceChangedNotifyer : INotifyer{
     public EMailBalanceChangedNotifyer(string email) {
         _email = email;
     }
-    public void Notify(int balance) {
+    public void Notify(decimal balance) {
         Console.WriteLine($"Email : {_email}");
         Console.WriteLine("EMailBalanceChangedNotifyer");
         Console.WriteLine($"{balance}\n");

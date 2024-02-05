@@ -3,12 +3,12 @@ namespace Homework_1.Account;
 using Homework_1.INotifyer;
 
 public class Account {
-    private int _balance = 0;
+    private decimal _balance = 0;
     private List<INotifyer> _notifyers = new List<INotifyer>();
 
     public Account(){}
 
-    public Account(int balance) {
+    public Account(decimal balance) {
         _balance = balance;
     }
 
@@ -16,12 +16,12 @@ public class Account {
         _notifyers.Add(notifyer);
     }
 
-    public void ChangeBalance(int value) {
+    public void ChangeBalance(decimal value) {
         _balance = value;
         Notification();
     }
 
-    public int Balance {
+    public decimal Balance {
         get { return _balance;}
     }
 

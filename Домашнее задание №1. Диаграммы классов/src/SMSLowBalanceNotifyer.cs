@@ -5,13 +5,13 @@ using Homework_1.INotifyer;
 public class SMSLowBalanceNotifyer : INotifyer {
 
     private string _phone;
-    private int _lowBalanceValue;
+    private decimal _lowBalanceValue;
 
-    public SMSLowBalanceNotifyer(string phone, int lowBalanceValue) {
+    public SMSLowBalanceNotifyer(string phone, decimal lowBalanceValue) {
         _phone = phone;
         _lowBalanceValue = lowBalanceValue;
     }
-    public void Notify(int balance) {
+    public void Notify(decimal balance) {
         Console.WriteLine($"Number : {_phone}");
         Console.WriteLine("SMSLowBalanceNotifyer");
 
