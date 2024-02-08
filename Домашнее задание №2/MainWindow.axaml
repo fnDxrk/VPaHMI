@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="400"
         x:Class="Домашнее_задание__2.MainWindow"
         Title="Домашнее_задание__2"
         Width="600"
@@ -10,68 +10,11 @@
         MinWidth="300"
         MinHeight="300"
         >
-        <Grid ColumnDefinitions="200, 0.1, auto">
+        <Grid ColumnDefinitions="0.33*, 0.001*, 0.66*">
                 <StackPanel Grid.Column="0">
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="Khaki">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="Red">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="MediumVioletRed">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="Bisque">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="LemonChiffon">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="PowderBlue">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="MintCream">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="Maroon">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="RosyBrown">
-                        </Button>
-                        <Button Width="200"
-                                Height="40"
-                                BorderBrush="Black"
-                                BorderThickness="2"
-                                Background="LightPink">
-                        </Button>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="Khaki" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch">Khaki</Button>
+                        </Border>
                 </StackPanel>
                 <GridSplitter Grid.Column="1" Background="Black">
                 </GridSplitter>
