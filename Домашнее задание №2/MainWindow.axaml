@@ -20,6 +20,78 @@
                                         HorizontalAlignment="Stretch"
                                         >Khaki</Button>
                         </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="Red" 
+                                        Name="buttonRed"
+                                        Content="Red"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >Red</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="MediumVioletRed" 
+                                        Name="buttonMediumVioletRed"
+                                        Content="MediumVioletRed"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >MediumVioletRed</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="Bisque" 
+                                        Name="buttonBisque"
+                                        Content="Bisque"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >Bisque</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="LemonChiffon" 
+                                        Name="buttonLemonChiffon"
+                                        Content="LemonChiffon"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >LemonChiffon</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="PowderBlue" 
+                                        Name="buttonPowderBlue"
+                                        Content="PowderBlue"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >PowderBlue</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="MintCream" 
+                                        Name="buttonMintCream"
+                                        Content="MintCream"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >MintCream</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="Maroon" 
+                                        Name="buttonMaroon"
+                                        Content="Maroon"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >Maroon</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="RosyBrown" 
+                                        Name="buttonRosyBrown"
+                                        Content="RosyBrown"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >RosyBrown</Button>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="2">
+                                <Button Background="LightPink" 
+                                        Name="buttonLightPink"
+                                        Content="LightPink"
+                                        HorizontalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        >LightPink</Button>
+                        </Border>
                 </StackPanel>
                 <GridSplitter Grid.Column="1" Background="Black">
                 </GridSplitter>
