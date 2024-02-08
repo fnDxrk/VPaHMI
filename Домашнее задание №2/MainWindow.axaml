@@ -4,6 +4,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Домашнее_задание__2.MainWindow"
-        Title="Домашнее_задание__2">
-    Welcome to Avalonia!
+        Title="Домашнее_задание__2"
+        Width="600"
+        Height="400"
+        MinWidth="300"
+        MinHeight="300"
+        >
+        <Grid ColumnDefinitions="200, 0.1, auto">
+                <StackPanel Grid.Column="0">
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="Khaki">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="Red">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="MediumVioletRed">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="Bisque">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="LemonChiffon">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="PowderBlue">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="MintCream">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="Maroon">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="RosyBrown">
+                        </Button>
+                        <Button Width="200"
+                                Height="40"
+                                BorderBrush="Black"
+                                BorderThickness="2"
+                                Background="LightPink">
+                        </Button>
+                </StackPanel>
+                <GridSplitter Grid.Column="1" Background="Black">
+                </GridSplitter>
+                <Canvas Grid.Column="2"/>
+        </Grid>
 </Window>
