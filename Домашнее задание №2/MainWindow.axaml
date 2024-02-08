@@ -18,6 +18,7 @@
                                         Content="Khaki"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >Khaki</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -26,6 +27,7 @@
                                         Content="Red"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >Red</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -34,6 +36,7 @@
                                         Content="MediumVioletRed"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >MediumVioletRed</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -42,6 +45,7 @@
                                         Content="Bisque"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >Bisque</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -50,6 +54,7 @@
                                         Content="LemonChiffon"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >LemonChiffon</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -58,6 +63,7 @@
                                         Content="PowderBlue"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >PowderBlue</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -66,6 +72,7 @@
                                         Content="MintCream"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >MintCream</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -74,6 +81,7 @@
                                         Content="Maroon"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >Maroon</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -82,6 +90,7 @@
                                         Content="RosyBrown"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >RosyBrown</Button>
                         </Border>
                         <Border BorderBrush="Black" BorderThickness="2">
@@ -90,11 +99,12 @@
                                         Content="LightPink"
                                         HorizontalContentAlignment="Center"
                                         HorizontalAlignment="Stretch"
+                                        Click="ClickButton"
                                         >LightPink</Button>
                         </Border>
                 </StackPanel>
                 <GridSplitter Grid.Column="1" Background="Black">
                 </GridSplitter>
-                <Canvas Grid.Column="2"/>
+                <Canvas Grid.Column="2" Name="Rectangle"/>
         </Grid>
 </Window>
