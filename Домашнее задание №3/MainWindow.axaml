@@ -4,6 +4,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Домашнее_задание__3.MainWindow"
-        Title="Домашнее_задание__3">
-    Welcome to Avalonia!
+        Title="Calc" Width="700" Height="500">
+    <Grid ColumnDefinitions="0.1* 0.1* 0.1* 0.1* 0.1* 0.1* 0.1*" RowDefinitions="0.1* 0.1* 0.1* 0.1* 0.1*" Background="White">
+        <TextBox Classes="TextBoxes" Grid.Row="0" Grid.ColumnSpan="7"/>
+
+        <Button Classes="Buttons" Content="mod" Grid.Row="1" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="sin" Grid.Row="2" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="cos" Grid.Row="3" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="tan" Grid.Row="4" Grid.Column="0"/>
+
+        <Button Classes="Buttons" Content="^" Grid.Row="1" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="n!" Grid.Row="2" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="log" Grid.Row="3" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="ln" Grid.Row="4" Grid.Column="1"/>
+
+        <Button Classes="Buttons" Content="7" Grid.Row="1" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="4" Grid.Row="2" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="1" Grid.Row="3" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="0" Grid.Row="4" Grid.Column="2"/>
+
+        <Button Classes="Buttons" Content="8" Grid.Row="1" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="5" Grid.Row="2" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="2" Grid.Row="3" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="," Grid.Row="4" Grid.Column="3"/>
+
+        <Button Classes="Buttons" Content="9" Grid.Row="1" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="6" Grid.Row="2" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="3" Grid.Row="3" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="=" Grid.Row="4" Grid.Column="4"/>
+
+        <Button Classes="Buttons" Content="/" Grid.Row="1" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="X" Grid.Row="2" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="-" Grid.Row="3" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="+" Grid.Row="4" Grid.Column="5"/>
+
+        <Button Classes="Buttons" Content="AC" Grid.Row="1" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="del" Grid.Row="2" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="floor" Grid.Row="3" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="ceil" Grid.Row="4" Grid.Column="6"/>
+    </Grid>
+    <Window.Styles>
+        <Style Selector="Button.Buttons">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="TextBox.TextBoxes">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Styles>
 </Window>
