@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Домашнее задан
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Домашнее задание №2", "Домашнее задание №2\Домашнее задание №2.csproj", "{9849D951-8D05-40B3-A39A-789981EB64D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Домашнее задание №3", "Домашнее задание №3\Домашнее задание №3.csproj", "{83C36045-AC68-4026-B13F-46F60CB37AA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +29,9 @@ Global
 		{9849D951-8D05-40B3-A39A-789981EB64D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9849D951-8D05-40B3-A39A-789981EB64D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9849D951-8D05-40B3-A39A-789981EB64D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C36045-AC68-4026-B13F-46F60CB37AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C36045-AC68-4026-B13F-46F60CB37AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C36045-AC68-4026-B13F-46F60CB37AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C36045-AC68-4026-B13F-46F60CB37AA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
