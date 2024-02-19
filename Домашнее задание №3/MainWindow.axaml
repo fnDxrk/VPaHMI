@@ -2,64 +2,63 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Домашнее_задание__3.ViewModels"
+        x:DataType="vm:MainViewModel"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Домашнее_задание__3.MainWindow"
         Title="Calc" Width="700" Height="500">
     <Grid ColumnDefinitions="0.1* 0.1* 0.1* 0.1* 0.1* 0.1* 0.1*" RowDefinitions="0.1* 0.1* 0.1* 0.1* 0.1*" Background="White">
-        <TextBox Classes="TextBoxes" Grid.Row="0" Grid.ColumnSpan="7"/>
+        <TextBlock Classes="TextBlock" Text="{Binding Result, Mode=TwoWay}" Grid.Row="0" Grid.ColumnSpan="7"/>
 
-        <Button Classes="Buttons" Content="mod" Grid.Row="1" Grid.Column="0"/>
-        <Button Classes="Buttons" Content="sin" Grid.Row="2" Grid.Column="0"/>
-        <Button Classes="Buttons" Content="cos" Grid.Row="3" Grid.Column="0"/>
-        <Button Classes="Buttons" Content="tan" Grid.Row="4" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="mod" Command="{Binding OperatorClick}" CommandParameter="mod" Grid.Row="1" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="sin" Command="{Binding OperatorClick}" CommandParameter="sin" Grid.Row="2" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="cos" Command="{Binding OperatorClick}" CommandParameter="cos" Grid.Row="3" Grid.Column="0"/>
+        <Button Classes="Buttons" Content="tan" Command="{Binding OperatorClick}" CommandParameter="tan" Grid.Row="4" Grid.Column="0"/>
 
-        <Button Classes="Buttons" Content="^" Grid.Row="1" Grid.Column="1"/>
-        <Button Classes="Buttons" Content="n!" Grid.Row="2" Grid.Column="1"/>
-        <Button Classes="Buttons" Content="log" Grid.Row="3" Grid.Column="1"/>
-        <Button Classes="Buttons" Content="ln" Grid.Row="4" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="^" Command="{Binding OperatorClick}" CommandParameter="^" Grid.Row="1" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="n!" Command="{Binding OperatorClick}" CommandParameter="n!" Grid.Row="2" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="log" Command="{Binding OperatorClick}" CommandParameter="log" Grid.Row="3" Grid.Column="1"/>
+        <Button Classes="Buttons" Content="ln" Command="{Binding OperatorClick}" CommandParameter="ln" Grid.Row="4" Grid.Column="1"/>
 
-        <Button Classes="Buttons" Content="7" Grid.Row="1" Grid.Column="2"/>
-        <Button Classes="Buttons" Content="4" Grid.Row="2" Grid.Column="2"/>
-        <Button Classes="Buttons" Content="1" Grid.Row="3" Grid.Column="2"/>
-        <Button Classes="Buttons" Content="0" Grid.Row="4" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="7" Command="{Binding NumberClick}" CommandParameter="7" Grid.Row="1" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="4" Command="{Binding NumberClick}" CommandParameter="4" Grid.Row="2" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="1" Command="{Binding NumberClick}" CommandParameter="1" Grid.Row="3" Grid.Column="2"/>
+        <Button Classes="Buttons" Content="0" Command="{Binding NumberClick}" CommandParameter="0" Grid.Row="4" Grid.Column="2"/>
 
-        <Button Classes="Buttons" Content="8" Grid.Row="1" Grid.Column="3"/>
-        <Button Classes="Buttons" Content="5" Grid.Row="2" Grid.Column="3"/>
-        <Button Classes="Buttons" Content="2" Grid.Row="3" Grid.Column="3"/>
-        <Button Classes="Buttons" Content="," Grid.Row="4" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="8" Command="{Binding NumberClick}" CommandParameter="8" Grid.Row="1" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="5" Command="{Binding NumberClick}" CommandParameter="5" Grid.Row="2" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="2" Command="{Binding NumberClick}" CommandParameter="2" Grid.Row="3" Grid.Column="3"/>
+        <Button Classes="Buttons" Content="," Command="{Binding OperatorClick}" CommandParameter="," Grid.Row="4" Grid.Column="3"/>
 
-        <Button Classes="Buttons" Content="9" Grid.Row="1" Grid.Column="4"/>
-        <Button Classes="Buttons" Content="6" Grid.Row="2" Grid.Column="4"/>
-        <Button Classes="Buttons" Content="3" Grid.Row="3" Grid.Column="4"/>
-        <Button Classes="Buttons" Content="=" Grid.Row="4" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="9" Command="{Binding NumberClick}" CommandParameter="9" Grid.Row="1" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="6" Command="{Binding NumberClick}" CommandParameter="6" Grid.Row="2" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="3" Command="{Binding NumberClick}" CommandParameter="3" Grid.Row="3" Grid.Column="4"/>
+        <Button Classes="Buttons" Content="=" Command="{Binding OperatorClick}" CommandParameter="=" Grid.Row="4" Grid.Column="4"/>
 
-        <Button Classes="Buttons" Content="/" Grid.Row="1" Grid.Column="5"/>
-        <Button Classes="Buttons" Content="X" Grid.Row="2" Grid.Column="5"/>
-        <Button Classes="Buttons" Content="-" Grid.Row="3" Grid.Column="5"/>
-        <Button Classes="Buttons" Content="+" Grid.Row="4" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="/" Command="{Binding OperatorClick}" CommandParameter="/" Grid.Row="1" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="*" Command="{Binding OperatorClick}" CommandParameter="*" Grid.Row="2" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="-" Command="{Binding OperatorClick}" CommandParameter="-" Grid.Row="3" Grid.Column="5"/>
+        <Button Classes="Buttons" Content="+" Command="{Binding OperatorClick}" CommandParameter="+" Grid.Row="4" Grid.Column="5"/>
 
-        <Button Classes="Buttons" Content="AC" Grid.Row="1" Grid.Column="6"/>
-        <Button Classes="Buttons" Content="del" Grid.Row="2" Grid.Column="6"/>
-        <Button Classes="Buttons" Content="floor" Grid.Row="3" Grid.Column="6"/>
-        <Button Classes="Buttons" Content="ceil" Grid.Row="4" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="AC" Command="{Binding OperatorClick}" CommandParameter="AC" Grid.Row="1" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="del" Command="{Binding OperatorClick}" CommandParameter="del" Grid.Row="2" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="floor" Command="{Binding OperatorClick}" CommandParameter="floor" Grid.Row="3" Grid.Column="6"/>
+        <Button Classes="Buttons" Content="ceil" Command="{Binding OperatorClick}" CommandParameter="ceil" Grid.Row="4" Grid.Column="6"/>
     </Grid>
     <Window.Styles>
         <Style Selector="Button.Buttons">
             <Setter Property="FontSize" Value="24"/>
-            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="Background" Value="#0000ff"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
-        <Style Selector="TextBox.TextBoxes">
+        <Style Selector="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
     </Window.Styles>
 </Window>
