@@ -1,6 +1,6 @@
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 
-namespace Домашнее_задание__4;
+namespace Домашнее_задание__4.Views;
 
 public partial class MainWindow : Window
 {
