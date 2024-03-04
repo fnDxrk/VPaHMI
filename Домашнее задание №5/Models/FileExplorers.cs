@@ -1,6 +1,8 @@
 ﻿using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using System;
+using System.Linq;
+
 
 namespace Домашнее_задание__5.Class
 {
@@ -85,6 +87,21 @@ namespace Домашнее_задание__5.Class
             IconPath = "avares://Домашнее задание №5/Assets/hard.png";
         }
 
+    }
+
+    public class FileImage: File
+    {
+        public static bool IsImage(string name)
+        {
+            string extension = System.IO.Path.GetExtension(name)?.ToLowerInvariant();
+
+            string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp" };
+
+            return imageExtensions.Contains(extension);
+        }
+
+        public FileImage(string filePath, string name) : base(filePath, name) { }
+       
     }
 }
 

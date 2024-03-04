@@ -1,71 +1,153 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using Домашнее_задание__5.Class;
+using Avalonia.Media.Imaging;
 
 namespace Домашнее_задание__5.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        private ObservableCollection<IExplorer> _items = new ObservableCollection<IExplorer>();
+        private ObservableCollection<IExplorer> _explorerItems = new ObservableCollection<IExplorer>();
 
-        public ObservableCollection<IExplorer> Items => _items;
+        public ObservableCollection<IExplorer> ExplorerItems => _explorerItems;
 
-        private string _currentPath;
+        private string _currentDirectoryPath;
+
+        private Bitmap? _selectedImageBitmap;
+
+        public Bitmap? SelectedImageBitmap
+        {
+            get { return _selectedImageBitmap; }
+            set
+            {
+                if (_selectedImageBitmap != value)
+                {
+                    _selectedImageBitmap = value;
+                    OnPropertyChanged(nameof(SelectedImageBitmap));
+                }
+            }
+        }
+
+        private FileSystemWatcher _fileSystemWatcher;
 
         public MainViewModel()
         {
-            _currentPath = Directory.GetCurrentDirectory();
-            LoadItems();
+            _currentDirectoryPath = Directory.GetCurrentDirectory();
+            InitializeFileSystemWatcher();
+            LoadItemsAsync();
         }
 
-        public void LoadItems()
-        {
-            _items.Clear();
+        private void InitializeFileSystemWatcher()
+        {   
+            _fileSystemWatcher = new FileSystemWatcher();
 
-            string parentDirectory = Path.GetDirectoryName(_currentPath);
+            _fileSystemWatcher.Path = _currentDirectoryPath;
+            _fileSystemWatcher.Changed += FileSystemWatcher_Changed;
+            _fileSystemWatcher.Created += FileSystemWatcher_Changed;
+            _fileSystemWatcher.Deleted += FileSystemWatcher_Changed;
+            _fileSystemWatcher.Renamed += FileSystemWatcher_Changed;
+
+            _fileSystemWatcher.IncludeSubdirectories = false;
+            _fileSystemWatcher.EnableRaisingEvents = true;
+        }
+
+        private async Task LoadItemsAsync()
+        {
+            ExplorerItems.Clear();
+
+            string parentDirectory = Path.GetDirectoryName(_currentDirectoryPath);
             if (parentDirectory != null)
             {
-                _items.Add(new Class.Directoryies(parentDirectory, ".."));
+                ExplorerItems.Add(new Directoryies(parentDirectory, ".."));
             }
             else
             {
-                _items.Add(new Class.Directoryies("Drives", ".."));
+                ExplorerItems.Add(new Directoryies("Drives", ".."));
             }
 
-            foreach (var directoryPath in Directory.GetDirectories(_currentPath))
-            {
-                string name = Path.GetFileName(directoryPath);
-                _items.Add(new Class.Directoryies(directoryPath, name));
-            }
+            await LoadDirectoriesAsync(_currentDirectoryPath);
+            await LoadFilesAsync(_currentDirectoryPath);
+        }
 
-            foreach (var filePath in Directory.GetFiles(_currentPath))
+        private async Task LoadDirectoriesAsync(string path)
+        {
+            try
             {
-                string name = Path.GetFileName(filePath);
-                _items.Add(new Class.File(filePath, name));
+                string[] directoryPaths = await Task.Run(() => Directory.GetDirectories(path));
+                foreach (var directoryPath in directoryPaths)
+                {
+                    string name = Path.GetFileName(directoryPath);
+                    ExplorerItems.Add(new Directoryies(directoryPath, name));
+                }
             }
+            catch (Exception ex) {}
+        }
+
+        private async Task LoadFilesAsync(string path)
+        {
+            try
+            {
+                string[] filePaths = await Task.Run(() => Directory.GetFiles(path));
+                foreach (var filePath in filePaths)
+                {
+                    string name = Path.GetFileName(filePath);
+                    if (FileImage.IsImage(name))
+                    {
+                        ExplorerItems.Add(new FileImage(filePath, name));
+                    }
+                    else
+                    {
+                        ExplorerItems.Add(new Class.File(filePath, name));
+                    }
+                }
+            }
+            catch (Exception ex) {}
         }
 
         public void LoadDrives()
         {
-            _items.Clear();
+            ExplorerItems.Clear();
 
             foreach (var driveInfo in DriveInfo.GetDrives())
             {
-                _items.Add(new Class.Drive(driveInfo.RootDirectory.FullName, driveInfo.Name));
+                ExplorerItems.Add(new Drive(driveInfo.RootDirectory.FullName, driveInfo.Name));
             }
         }
 
         public void HandleItemClick(IExplorer item)
         {
-            _currentPath = item.Path;
+            _currentDirectoryPath = item.Path;
             if (item.Path == "Drives")
             {
                 LoadDrives();
             }
             else
             {
-                LoadItems();
+                LoadItemsAsync();
             }
+        }
+
+        public void HandleImageClick(IExplorer item)
+        {
+            if (item is FileImage)
+            {
+                SelectedImageBitmap = new Bitmap(item.Path);
+            }
+        }
+
+        private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            LoadItemsAsync();
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

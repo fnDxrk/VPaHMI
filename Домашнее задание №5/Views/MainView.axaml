@@ -12,18 +12,19 @@
     <UserControl.DataContext>
 		<vm:MainViewModel/>
 	</UserControl.DataContext>
-	
-	<ScrollViewer> 
-        <ListBox ItemsSource ="{Binding Items}" DoubleTapped = "TappedListBox" SelectionMode="Single">
+
+    <Grid ColumnDefinitions="0.4*, Auto, *">
+        <ListBox Grid.Column="0" ItemsSource ="{Binding ExplorerItems}" Tapped ="TappedImage" DoubleTapped = "TappedListBox" SelectionMode="Single">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation ="Horizontal">
+                    <StackPanel ToolTip.Tip="{Binding Path}" Orientation ="Horizontal">
                         <Image Width="32" Height="32" Source ="{Binding IconBitmap}"/>
                         <TextBlock Text ="{Binding Name}" VerticalAlignment="Center" Margin="5"/> 
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-    </ScrollViewer>
-
+        <GridSplitter Grid.Column="1" Background="Gray"/>
+        <Image Grid.Column="2" Source="{Binding SelectedImageBitmap}" Stretch="Uniform"/>
+    </Grid>
 </UserControl>
