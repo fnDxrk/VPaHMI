@@ -3,8 +3,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using Домашнее_задание__5.Class;
 using Avalonia.Media.Imaging;
+using Домашнее_задание__5.Class;
 
 namespace Домашнее_задание__5.ViewModels
 {
@@ -41,21 +41,19 @@ namespace Домашнее_задание__5.ViewModels
         }
 
         private void InitializeFileSystemWatcher()
-        {   
+        {
             _fileSystemWatcher = new FileSystemWatcher();
-
-            _fileSystemWatcher.Path = _currentDirectoryPath;
-            _fileSystemWatcher.Changed += FileSystemWatcher_Changed;
+            _fileSystemWatcher.Path = _currentDirectoryPath; 
+            _fileSystemWatcher.IncludeSubdirectories = true;
             _fileSystemWatcher.Created += FileSystemWatcher_Changed;
             _fileSystemWatcher.Deleted += FileSystemWatcher_Changed;
             _fileSystemWatcher.Renamed += FileSystemWatcher_Changed;
-
-            _fileSystemWatcher.IncludeSubdirectories = false;
             _fileSystemWatcher.EnableRaisingEvents = true;
         }
 
         private async Task LoadItemsAsync()
-        {
+        {   
+            _fileSystemWatcher.Path = _currentDirectoryPath;
             ExplorerItems.Clear();
 
             string parentDirectory = Path.GetDirectoryName(_currentDirectoryPath);
@@ -138,9 +136,9 @@ namespace Домашнее_задание__5.ViewModels
             }
         }
 
-        private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
+        private async void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
         {
-            LoadItemsAsync();
+            await LoadItemsAsync();
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
