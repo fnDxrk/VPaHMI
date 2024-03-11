@@ -3,11 +3,12 @@
         xmlns:vm="using:Домашнее_задание__6.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
         x:Class="Домашнее_задание__6.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Домашнее_задание__6">
+        Height="800" Width="500"
+        Title="WeatherApp">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +16,109 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <!-- Light Theme : #436CDB #6B90EC -->
+    <!-- Dark Theme : #010F37 #2A3957 -->
+
+    <Grid RowDefinitions="1.2* *" Background="#436CDB" ShowGridLines="True">
+        <Grid Grid.Row="0" Background="#436CDB" ColumnDefinitions="0.2* * * * * * 0.2*" RowDefinitions="0.4* 0.3* 0.4* 0.3* 0.8* 0.4* * 0.4*" ShowGridLines="True">
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="3" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Thin"
+                       Text="Tuesday, 15"/>
+            
+            <Menu Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Padding="0">
+                <MenuItem Header="Moscow"
+                          Padding="0"
+                          Foreground="White"
+                          FontSize="28"
+                          FontWeight="ExtraBold"/>
+            </Menu>
+            <TextBlock Grid.Row="4"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="64"
+                       FontWeight="ExtraBold"
+                       Text="+27°"/>
+            <Image HorizontalAlignment="Center"
+                   Grid.Row="3" 
+                   Grid.RowSpan="2"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="2"
+                   Source="avares://Домашнее задание №6/Assets/type_1.png"/>
+
+            <ListBox Background="Transparent" 
+                     Grid.Row="6" 
+                     Grid.Column="1" 
+                     Grid.ColumnSpan="5"
+                     ItemsSource="{Binding WeatherList}"
+                     SelectedItem="{Binding SelectedWeather}">
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" ScrollViewer.IsScrollInertiaEnabled="True">
+                        </StackPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.Styles>
+				    <Style Selector="ListBoxItem">
+					    <Setter Property="Width" Value="92.5"></Setter>
+				    </Style>
+                </ListBox.Styles>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="* * *">
+                            <TextBlock Grid.Row="0"
+                                       Foreground="White"
+                                       Text="{Binding Date}"/>
+                            <TextBlock Grid.Row="1"
+                                       Foreground="White"
+                                       Text="{Binding Temperature}"/>
+                            <Image Grid.Row="2"
+                                   Width="50"
+                                   Height="50"
+                                   Source="avares://Домашнее задание №6/Assets/type_1.png"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        
+        <Border Grid.Row="1" Background="#6B90EC" CornerRadius="30">
+            <Grid ColumnDefinitions="Auto" RowDefinitions="Auto" ShowGridLines="False">
+                <ListBox Background="Transparent" 
+                         Grid.Row="6" 
+                         Grid.Column="1" 
+                         Grid.ColumnSpan="5"
+                         ItemsSource="" SelectedItem="">
+                    <ListBox.ItemTemplate>
+                            <Grid ColumnDefinitions="* * * * * *">
+                                    <TextBlock Grid.Column="1"
+                                               Foreground="White"
+                                               Text="Wednesday, 16"/>
+                                    <Image Grid.Column="2"
+                                           Source="avares://Домашнее задание №6/Assets/type_1.png"/>
+                                    <TextBlock Grid.Column="3"
+                                               Foreground="White"
+                                               Text="+27"/>
+                                    <TextBlock Grid.Column="4"
+                                               Foreground="White"
+                                               Text="+25"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+    </Grid>
+
 
 </Window>
