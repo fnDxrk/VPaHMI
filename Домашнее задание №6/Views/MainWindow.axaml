@@ -19,8 +19,8 @@
     <!-- Light Theme : #436CDB #6B90EC -->
     <!-- Dark Theme : #010F37 #2A3957 -->
 
-    <Grid RowDefinitions="1.2* *" Background="#436CDB" ShowGridLines="True">
-        <Grid Grid.Row="0" Background="#436CDB" ColumnDefinitions="0.2* * * * * * 0.2*" RowDefinitions="0.4* 0.3* 0.4* 0.3* 0.8* 0.4* * 0.4*" ShowGridLines="True">
+    <Grid RowDefinitions="1.2* *" Background="{Binding FirstBackground}" ShowGridLines="False">
+        <Grid Grid.Row="0" Background="{Binding FirstBackground}" ColumnDefinitions="0.2* * * * * * 0.2*" RowDefinitions="0.4* 0.3* 0.4* 0.3* 0.8* 0.4* * 0.4*" ShowGridLines="False">
             <TextBlock Grid.Row="1"
                        Grid.Column="2"
                        Grid.ColumnSpan="3" 
@@ -29,14 +29,16 @@
                        Foreground="White"
                        FontSize="24"
                        FontWeight="Thin"
-                       Text="Tuesday, 15"/>
+                       Text="{Binding Date}"/>
             
             <Menu Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Padding="0">
-                <MenuItem Header="Moscow"
+                <MenuItem Header="{Binding CurrentCity}"
                           Padding="0"
                           Foreground="White"
                           FontSize="28"
-                          FontWeight="ExtraBold"/>
+                          FontWeight="ExtraBold">
+                    <TextBox Text="{Binding CurrentCity, Mode=TwoWay}"></TextBox>
+                </MenuItem>
             </Menu>
             <TextBlock Grid.Row="4"
                        Grid.Column="1"
@@ -45,13 +47,14 @@
                        Foreground="White"
                        FontSize="64"
                        FontWeight="ExtraBold"
-                       Text="+27°"/>
+                       Text="{Binding CurrentTemperature}"/>
+                       <!-- ° -->
             <Image HorizontalAlignment="Center"
                    Grid.Row="3" 
                    Grid.RowSpan="2"
                    Grid.Column="4"
                    Grid.ColumnSpan="2"
-                   Source="avares://Домашнее задание №6/Assets/type_1.png"/>
+                   Source="avares://Домашнее задание №6/Assets/blue-cloud-and-weather.png"/>
 
             <ListBox Background="Transparent" 
                      Grid.Row="6" 
@@ -85,33 +88,42 @@
                             <Image Grid.Row="2"
                                    Width="50"
                                    Height="50"
-                                   Source="avares://Домашнее задание №6/Assets/type_1.png"/>
+                                   Source="avares://Домашнее задание №6/Assets/blue-cloud-and-weather.png"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
         
-        <Border Grid.Row="1" Background="#6B90EC" CornerRadius="30">
-            <Grid ColumnDefinitions="Auto" RowDefinitions="Auto" ShowGridLines="False">
+        <Border Grid.Row="1" Background="{Binding SecondBackground}" CornerRadius="30 30 0 0">
+            <Grid ColumnDefinitions="*" RowDefinitions="*" ShowGridLines="False">
                 <ListBox Background="Transparent" 
                          Grid.Row="6" 
                          Grid.Column="1" 
                          Grid.ColumnSpan="5"
-                         ItemsSource="" SelectedItem="">
+                         ItemsSource="{Binding WeekWeatherList}">
                     <ListBox.ItemTemplate>
-                            <Grid ColumnDefinitions="* * * * * *">
+                        <DataTemplate>
+                            <Grid ShowGridLines="False" ColumnDefinitions="0.1* 0.8* * 0.4* 0.3* 0.3* 0.1*">
                                     <TextBlock Grid.Column="1"
+                                               VerticalAlignment="Center"
                                                Foreground="White"
-                                               Text="Wednesday, 16"/>
-                                    <Image Grid.Column="2"
-                                           Source="avares://Домашнее задание №6/Assets/type_1.png"/>
-                                    <TextBlock Grid.Column="3"
-                                               Foreground="White"
-                                               Text="+27"/>
+                                               Text="{Binding Date}"/>
+                                    <Image Grid.Column="3"
+                                            Width="50"
+                                            Height="50"
+                                            VerticalAlignment="Center"
+                                            Source="avares://Домашнее задание №6/Assets/blue-cloud-and-weather.png"/>
                                     <TextBlock Grid.Column="4"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
                                                Foreground="White"
-                                               Text="+25"/>
+                                               Text="{Binding TemperatureDay}"/>
+                                    <TextBlock Grid.Column="5"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="White"
+                                               Text="{Binding TemperatureNight}"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -119,6 +131,5 @@
             </Grid>
         </Border>
     </Grid>
-
 
 </Window>

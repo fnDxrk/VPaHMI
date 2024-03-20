@@ -1,4 +1,3 @@
-
 namespace Домашнее_задание__6.WeatherView
 {
     public class WeatherViewModel
