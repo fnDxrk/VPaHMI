@@ -1,20 +1,53 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Домашнее_задание__7.ViewModels"
+		xmlns:class="using:Домашнее_задание__7.Class"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Домашнее_задание__7.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+		Width = "1000" Height="700"
         Title="Reactive">
 
-    <Design.DataContext>
+    <Window.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    </Window.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<StackPanel Height="600">
+		<Button HorizontalAlignment="Center" HorizontalContentAlignment="Center" Background="Black"
+				Command="{Binding AddUserCommand}" Content="Add" Foreground="White" />
+		<DataGrid  Margin="20" Grid.Row="0" ItemsSource="{Binding UserData}" IsReadOnly="{Binding IsGridReadOnly}" AutoGenerateColumns="False" BorderBrush="Gray" GridLinesVisibility="All">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="First Name"  Binding="{Binding Name}"/>
+				<DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+				<DataGridTextColumn Header="Username" Binding="{Binding Username}" />
+				<DataGridTextColumn Header="Phone" Binding="{Binding Phone}" />
+				<DataGridTextColumn Header="Website" Binding="{Binding Website}" />
+				<DataGridTemplateColumn Header="Remove">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button HorizontalAlignment="Center" HorizontalContentAlignment="Center" Background="Black"
+									Command="{Binding RemoveUser, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+									CommandParameter="{Binding}" Content="Remove" Foreground="White" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn Header="Changed">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button HorizontalAlignment="Center" HorizontalContentAlignment="Center" Background="Black"
+									Command="{Binding DataContext.ToggleReadOnlyCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+									CommandParameter="{Binding}"
+									Content="Changed" Foreground="White" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+	</StackPanel>
 
 </Window>
