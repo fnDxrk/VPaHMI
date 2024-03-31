@@ -31,7 +31,7 @@
 						<DataTemplate>
                             <!-- Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).RemoveUser}" -->
 							<Button HorizontalAlignment="Center" HorizontalContentAlignment="Center" Background="Black"
-									Command="{Binding DataContext.RemoveUser, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+									Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).RemoveUser}"
                                     CommandParameter="{Binding}" Content="Remove" Foreground="White" />
 						</DataTemplate>
 					</DataGridTemplateColumn.CellTemplate>
@@ -40,7 +40,7 @@
 					<DataGridTemplateColumn.CellTemplate>
 						<DataTemplate>
 							<Button HorizontalAlignment="Center" HorizontalContentAlignment="Center" Background="Black"
-									Command="{Binding DataContext.ToggleReadOnlyCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+									Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ToggleReadOnlyCommand}"
 									CommandParameter="{Binding}"
 									Content="Changed" Foreground="White" />
 						</DataTemplate>
