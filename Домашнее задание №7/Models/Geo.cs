@@ -1,4 +1,4 @@
-namespace Домашнее_задание__7.Class
+﻿namespace Домашнее_задание__7.Class
 {
     public class Geo
     {

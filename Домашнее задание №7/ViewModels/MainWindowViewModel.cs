@@ -10,9 +10,8 @@ using static Домашнее_задание__7.Class.ObservableFactory;
 
 namespace Домашнее_задание__7.ViewModels;
 
-public partial class MainWindowViewModel : ObservableRecipient
+public class MainWindowViewModel : ObservableRecipient
 {
-
     public NewUser NewUserData { get; } = new NewUser();
 
     private Log _log;
@@ -51,7 +50,7 @@ public partial class MainWindowViewModel : ObservableRecipient
         AddUserCommand = new RelayCommand(ExecuteAddUser);
 
         UserData = new ObservableCollection<User>();
-        _log = new Log("/home/dxrk_/Documents/Study/VPaHMI/Домашнее задание №7/Logs/");
+        _log = new Log("/home/dxrk_/Documents/Study/VPaHMI/Домашнее задание №7/Logs/Log.txt");
 
         LoadUsers();
 
@@ -71,6 +70,7 @@ public partial class MainWindowViewModel : ObservableRecipient
             }
         }
     }
+
 
     private void OnUserDataChanged(CollectionChangedEventArgs<User> args)
     {
@@ -116,5 +116,3 @@ public partial class MainWindowViewModel : ObservableRecipient
         UserData.Add(newUser);
     }
 }
-
-

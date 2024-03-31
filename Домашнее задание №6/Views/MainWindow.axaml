@@ -88,7 +88,7 @@
                             <Image Grid.Row="2"
                                    Width="50"
                                    Height="50"
-                                   Source="avares://Домашнее задание №6/Assets/blue-cloud-and-weather.png"/>
+                                   Source="avares://Домашнее задание №6/Assets/snow-and-blue-cloud.png"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -113,7 +113,7 @@
                                             Width="50"
                                             Height="50"
                                             VerticalAlignment="Center"
-                                            Source="avares://Домашнее задание №6/Assets/blue-cloud-and-weather.png"/>
+                                            Source="avares://Домашнее задание №6/Assets/snow-and-blue-cloud.png"/>
                                     <TextBlock Grid.Column="4"
                                                VerticalAlignment="Center"
                                                HorizontalAlignment="Center"
