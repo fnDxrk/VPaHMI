@@ -6,9 +6,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Домашнее_задание__7.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Width="1000" Height="700"
+        Width="1120" Height="700"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Домашнее_задание__7">
+        Title="Reactive">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
