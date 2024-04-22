@@ -1,0 +1,189 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:hw_12.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="hw_12.Views.MainView"
+             x:DataType="vm:MainViewModel"
+             xmlns:lc="clr-namespace:hw_12.LogicComponent"
+             xmlns:lcShared="clr-namespace:hw_12.LogicComponent.Shared"
+             xmlns:lcTypes="clr-namespace:hw_12.LogicComponent.ComponentTypes">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:BufferComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:InvertorComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:AndComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:InvertorComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:OrComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:OrNoComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:XorComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:XorNoComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:BufferComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:InvertorComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:AndComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:InvertorComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:OrComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:OrNoComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:XorComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+            <lc:LogicUnit
+                InputValues="{Binding InputValues, Mode=TwoWay}"
+                OutputValue="{Binding Output, Mode=TwoWay}">
+                <lc:LogicUnit.VisualizationType>
+                    <lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+                </lc:LogicUnit.VisualizationType>
+                <lc:LogicUnit.LogicComponent>
+                    <lcTypes:XorNoComponent />
+                </lc:LogicUnit.LogicComponent>
+            </lc:LogicUnit>
+        </StackPanel>
+    </StackPanel>
+
+</UserControl>
